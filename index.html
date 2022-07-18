@@ -16,7 +16,141 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="h1">Greetings!</h1>
+      <div class="card" id="main-card">
+        <div class="card-body shadow">
+          <form class="d-flex" role="search" id="search-bar">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="search-input"
+            />
+            <button class="btn btn-success" type="submit" id="search-button">
+              Search
+            </button>
+          </form>
+
+          <div class="row justify-content-center">
+            <div
+              class="col align-self-center"
+              name="main-emoji"
+              id="main-emoji"
+            >
+              <img
+                src="media/1530392_weather_sun_sunny_temperature.png"
+                alt="Sunny"
+                width="100px"
+              />
+            </div>
+
+            <div class="col align-self-center" name="today" id="today">
+              <div class="heading">
+                <h3 class="current-city">Nicosia</h3>
+                <span class="current-temperature" id="current-temp">23</span>
+                <span class="units">
+                  <a href="#" id="temp-celsius">°C |</a>
+                  <a href="#" id="temp-farenheit">°F</a>
+                </span>
+                <h4 class="today-date">Thursday, 23/06/22</h4>
+              </div>
+            </div>
+
+            <div
+              class="col align-self-center"
+              name="today-details"
+              id="today-details"
+            >
+              <ul>
+                <li>Cloudy</li>
+                <li>Windspeed: 19.6km/h</li>
+                <li>Humidity: 47%</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row" id="upcoming-weather">
+            <span class="col-2" name="card">
+              <div class="card-day">Fri</div>
+              <div>
+                <img
+                  src="media/1530364_rain_storm_shower_weather.png"
+                  alt="Rain Storm"
+                  width="70px"
+                />
+              </div>
+              <div>23° / 38°</div>
+            </span>
+
+            <span class="col-2" name="card">
+              <div class="card-day">Sat</div>
+              <div>
+                <img
+                  src="media/1530390_sunny_rain_cloudy_weather_clouds.png"
+                  alt="Sun and Rain"
+                  width="70px"
+                />
+              </div>
+              <div>24° / 40°</div>
+            </span>
+
+            <span class="col-2" name="card">
+              <div class="card-day">Sun</div>
+              <div>
+                <img
+                  src="media/1530391_clouds_sun_sunny_weather.png"
+                  alt="Partially Cloudy"
+                  width="70px"
+                />
+              </div>
+              <div>21° / 38°</div>
+            </span>
+
+            <span class="col-2" name="card">
+              <div class="card-day">Mon</div>
+              <div>
+                <img
+                  src="media/1530369_cloudy_weather_clouds_cloud.png"
+                  alt="Cloudy"
+                  width="70px"
+                />
+              </div>
+              <div>22° / 39°</div>
+            </span>
+
+            <span class="col-2" name="card">
+              <div class="card-day">Tues</div>
+              <div>
+                <img
+                  src="media/1530390_sunny_rain_cloudy_weather_clouds.png"
+                  alt="Sun and Rain"
+                  width="70px"
+                />
+              </div>
+              <div>23° / 40°</div>
+            </span>
+          </div>
+
+          <button
+            class="btn btn-success"
+            type="button"
+            id="current-city-button"
+          >
+            Current City
+          </button>
+
+          <p class="footer">
+            <a
+              href="https://github.com/adele-dube/Weather_App-2022"
+              id="footer-link"
+              target="_blank"
+            >
+              Open-Source Code
+            </a>
+            by Adele_D ©2022
+          </p>
+        </div>
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>
