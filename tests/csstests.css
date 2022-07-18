@@ -1,0 +1,25 @@
+.current-temperature {
+  font-size: 75px;
+  text-align: center;
+}
+
+.units {
+  font-size: 10px;
+}
+
+.current-city {
+  font-size: 15px;
+  text-align: center;
+}
+
+.current-date {
+  font-size: 10px;
+  text-align: center;
+}
+
+ul {
+  font-size: 10px;
+  list-style: none;
+  padding-top: 14px;
+  text-align: center;
+}
