@@ -63,6 +63,15 @@ function displayTemp(response) {
   timeElement.innerHTML = `${day}, ${date}/${month}/${year} </br> Local time ${hours}:${minutes}`;
 
   //
+
+  //Weather Icon
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    "alt",
+    `${response.data.weather[0].description}`
+  );
 }
 
 apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
