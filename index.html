@@ -46,14 +46,16 @@
 
             <div class="col-3 align-self-center" name="today" id="today">
               <div class="heading">
-                <h3 class="current-city">Nicosia</h3>
+                <h3 class="current-city" id="current-city">Nicosia</h3>
                 <span class="current-temperature" id="current-temp">23</span>
                 <span class="units">
                   <a href="#" id="temp-celsius">°C |</a>
                   <a href="#" id="temp-farenheit">°F</a>
                 </span>
 
-                <h4 class="current-date">Thursday, 23/06/22</h4>
+                <h4 class="current-date" id="current-date">
+                  Thursday, 23/06/22
+                </h4>
               </div>
             </div>
 
@@ -63,25 +65,17 @@
               id="today-details"
             >
               <ul>
-                <li>Cloudy</li>
-                <li>Windspeed: 19.6km/h</li>
-                <li>Humidity: 47%</li>
+                <li id="description">Cloudy</li>
+                <li id="windspeed">Windspeed: 19.6 km/h</li>
+                <li id="humidity">Humidity: 47%</li>
               </ul>
             </div>
           </div>
 
+          <!-- START #Upcoming Weather -->
+
           <div class="row justify-content-center" id="upcoming-weather">
-            <span
-              class="card col-2 shadow-sm"
-              name="card"
-              style="
-                border-radius: 20px;
-                height: 160px;
-                margin: 0 1.5px;
-                padding: 15px 12px;
-                background-color: rgba(255, 255, 255, 1);
-              "
-            >
+            <span class="card col-2 shadow-sm" id="card-1">
               <div class="card-day">Fri</div>
               <div>
                 <img
@@ -93,16 +87,7 @@
               <div>23° / 38°</div>
             </span>
 
-            <span
-              class="card col-2 shadow-sm"
-              name="card"
-              style="
-                border-radius: 20px;
-                height: 160px;
-                margin: 0 1.5px;
-                padding: 15px 12px;
-              "
-            >
+            <span class="card col-2 shadow-sm" id="card-2">
               <div class="card-day">Sat</div>
               <div>
                 <img
@@ -114,16 +99,7 @@
               <div>24° / 40°</div>
             </span>
 
-            <span
-              class="card col-2 shadow-sm"
-              name="card"
-              style="
-                border-radius: 20px;
-                height: 160px;
-                margin: 0 1.5px;
-                padding: 15px 12px;
-              "
-            >
+            <span class="card col-2 shadow-sm" id="card-3">
               <div class="card-day">Sun</div>
               <div>
                 <img
@@ -135,16 +111,7 @@
               <div>21° / 38°</div>
             </span>
 
-            <span
-              class="card col-2 shadow-sm"
-              name="card"
-              style="
-                border-radius: 20px;
-                height: 160px;
-                margin: 0 1.5px;
-                padding: 15px 12px;
-              "
-            >
+            <span class="card col-2 shadow-sm" id="card-4">
               <div class="card-day">Mon</div>
               <div>
                 <img
@@ -156,16 +123,7 @@
               <div>22° / 39°</div>
             </span>
 
-            <span
-              class="card col-2 shadow-sm"
-              name="card"
-              style="
-                border-radius: 20px;
-                height: 160px;
-                margin: 0 1.5px;
-                padding: 15px 12px;
-              "
-            >
+            <span class="card col-2 shadow-sm" id="card-5">
               <div class="card-day">Tues</div>
               <div>
                 <img
@@ -177,6 +135,8 @@
               <div>23° / 40°</div>
             </span>
           </div>
+
+          <!-- END #Upcoming Weather -->
 
           <button
             class="btn btn-success"
