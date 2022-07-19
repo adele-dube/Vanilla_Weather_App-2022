@@ -4,6 +4,7 @@
 
 #main-card {
   background-color: rgba(56, 153, 143, 0.2);
+  /*background-image: url("/media/0/clouds.jpg");*/
   margin: 25px auto;
   max-height: 800px;
   max-width: 800px;

@@ -74,35 +74,26 @@ function displayTemp(response) {
   );
 
   //Customized Weather Icons Using API Data
-  let weatherIcon = response.data.weather[0].icon;
+  let weatherIcon = response.data.weather[0].main;
   console.log(weatherIcon);
 
-  if (weatherIcon === "01d") {
-    iconElement.setAttribute("src", "/media/JSmedia/01d-alt.png");
-  }
-  if (weatherIcon === "02d") {
-    iconElement.setAttribute("src", "/media/JSmedia/02d-alt.png");
-  }
-  if (weatherIcon === "03d") {
-    iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
-  }
-  if (weatherIcon === "04d") {
-    iconElement.setAttribute("src", "/media/JSmedia/04d-alt.png");
-  }
-  if (weatherIcon === "09d") {
-    iconElement.setAttribute("src", "/media/JSmedia/09d-alt.png");
-  }
-  if (weatherIcon === "10d") {
-    iconElement.setAttribute("src", "/media/JSmedia/10d-alt.png");
-  }
-  if (weatherIcon === "11d") {
+  if (weatherIcon === "Thunderstorm") {
     iconElement.setAttribute("src", "/media/JSmedia/11d-alt.png");
   }
-  if (weatherIcon === "13d") {
+  if (weatherIcon === "Drizzle") {
+    iconElement.setAttribute("src", "/media/JSmedia/10d-alt.png");
+  }
+  if (weatherIcon === "Rain") {
+    iconElement.setAttribute("src", "/media/JSmedia/09d-alt.png");
+  }
+  if (weatherIcon === "Snow") {
     iconElement.setAttribute("src", "/media/JSmedia/13d-alt.png");
   }
-  if (weatherIcon === "50d") {
-    iconElement.setAttribute("src", "/media/JSmedia/50d-alt.png");
+  if (weatherIcon === "Clear") {
+    iconElement.setAttribute("src", "/media/JSmedia/01d-alt.png");
+  }
+  if (weatherIcon === "Clouds") {
+    iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
   }
 }
 
