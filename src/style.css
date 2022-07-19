@@ -9,6 +9,19 @@
   max-width: 800px;
 }
 
+#search-form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#search-input {
+  margin: 10px 80px;
+}
+
+#search-button {
+  margin: 10px 90px;
+}
+
 #search-button {
   background-color: rgba(56, 153, 143);
   border-color: rgba(56, 153, 143);

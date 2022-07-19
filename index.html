@@ -18,18 +18,29 @@
     <div class="container">
       <div class="card" id="main-card">
         <div class="card-body shadow">
-          <form class="d-flex" role="search" id="search-bar">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              id="search-input"
-            />
-            <button class="btn btn-success" type="submit" id="search-button">
-              Search
-            </button>
-          </form>
+          <div class="row align-items-center">
+            <form class="d-flex" role="search" id="search-form">
+              <div class="col-8 justify-content-center">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Enter a City..."
+                  aria-label="Search"
+                  id="search-input"
+                />
+              </div>
+
+              <div class="col-3 justify-content-center">
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                  id="search-button"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
 
           <div class="row justify-content-center" id="heading-container">
             <div

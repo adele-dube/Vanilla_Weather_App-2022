@@ -73,6 +73,7 @@ function displayTemp(response) {
     `${response.data.weather[0].description}`
   );
 
+  //Customized Weather Icons Using API Data
   let weatherIcon = response.data.weather[0].icon;
   console.log(weatherIcon);
 
@@ -105,10 +106,26 @@ function displayTemp(response) {
   }
 }
 
-apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
-let city = "Halifax";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+function search(city) {
+  apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-console.log(apiUrl);
+  console.log(apiUrl);
 
-axios.get(apiUrl).then(displayTemp);
+  axios.get(apiUrl).then(displayTemp);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  let searchInputElement = document.querySelector("#search-input");
+
+  search(searchInputElement.value);
+  console.log(searchInputElement.value);
+  //searchInputElement.innerHTML
+}
+
+search("Swakopmund");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
