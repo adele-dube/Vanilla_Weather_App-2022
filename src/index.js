@@ -128,7 +128,7 @@ function displayFarenheitTemp(event) {
   let tempFarenheit = Math.round((tempCelcius * 9) / 5 + 32);
   temperatureElement.innerHTML = tempFarenheit;
 
-  alert(tempFarenheit);
+  //alert(tempFarenheit);
 }
 
 function displayCelciusTemp(event) {
@@ -140,7 +140,7 @@ function displayCelciusTemp(event) {
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(tempCelcius);
 
-  alert(tempCelcius);
+  //alert(tempCelcius);
 }
 
 let tempCelcius = null;
