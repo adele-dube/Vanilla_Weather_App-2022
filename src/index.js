@@ -72,10 +72,41 @@ function displayTemp(response) {
     "alt",
     `${response.data.weather[0].description}`
   );
+
+  let weatherIcon = response.data.weather[0].icon;
+  console.log(weatherIcon);
+
+  if (weatherIcon === "01d") {
+    iconElement.setAttribute("src", "/media/JSmedia/01d-alt.png");
+  }
+  if (weatherIcon === "02d") {
+    iconElement.setAttribute("src", "/media/JSmedia/02d-alt.png");
+  }
+  if (weatherIcon === "03d") {
+    iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
+  }
+  if (weatherIcon === "04d") {
+    iconElement.setAttribute("src", "/media/JSmedia/04d-alt.png");
+  }
+  if (weatherIcon === "09d") {
+    iconElement.setAttribute("src", "/media/JSmedia/09d-alt.png");
+  }
+  if (weatherIcon === "10d") {
+    iconElement.setAttribute("src", "/media/JSmedia/10d-alt.png");
+  }
+  if (weatherIcon === "11d") {
+    iconElement.setAttribute("src", "/media/JSmedia/11d-alt.png");
+  }
+  if (weatherIcon === "13d") {
+    iconElement.setAttribute("src", "/media/JSmedia/13d-alt.png");
+  }
+  if (weatherIcon === "50d") {
+    iconElement.setAttribute("src", "/media/JSmedia/50d-alt.png");
+  }
 }
 
 apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
-let city = "Swakopmund";
+let city = "Halifax";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
 console.log(apiUrl);
