@@ -1,3 +1,14 @@
+function getForcast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+//
 function displayTemp(response) {
   console.log(response.data);
   console.log(response.data.main.temp);
@@ -97,6 +108,8 @@ function displayTemp(response) {
   if (weatherIcon === "Clouds") {
     iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
   }
+
+  getForcast(response.data.coord);
 }
 
 function search(city) {
@@ -106,6 +119,10 @@ function search(city) {
   console.log(apiUrl);
 
   axios.get(apiUrl).then(displayTemp);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
 }
 
 function handleSubmit(event) {
