@@ -51,13 +51,15 @@
 }
 
 #temp-celsius {
-  color: black;
   text-decoration: none;
 }
 
 #temp-farenheit {
-  color: black;
   text-decoration: none;
+}
+
+.units .active {
+  color: black;
 }
 
 .current-date {

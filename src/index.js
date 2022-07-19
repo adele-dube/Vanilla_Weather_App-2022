@@ -64,6 +64,8 @@ function displayTemp(response) {
 
   //
 
+  tempCelcius = Math.round(response.data.main.temp);
+
   //Weather Icon
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -116,7 +118,40 @@ function handleSubmit(event) {
   //searchInputElement.innerHTML
 }
 
-search("Swakopmund");
+function displayFarenheitTemp(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#current-temp");
+  celciusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+
+  let tempFarenheit = Math.round((tempCelcius * 9) / 5 + 32);
+  temperatureElement.innerHTML = tempFarenheit;
+
+  alert(tempFarenheit);
+}
+
+function displayCelciusTemp(event) {
+  event.preventDefault();
+
+  celciusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(tempCelcius);
+
+  alert(tempCelcius);
+}
+
+let tempCelcius = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let farenheitLink = document.querySelector("#temp-farenheit");
+farenheitLink.addEventListener("click", displayFarenheitTemp);
+
+let celciusLink = document.querySelector("#temp-celsius");
+celciusLink.addEventListener("click", displayCelciusTemp);
+
+search("Swakopmund");
