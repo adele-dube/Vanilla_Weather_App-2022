@@ -1,3 +1,4 @@
+//TEMPERATURE USING COORDINATES FOR DAILY FORECAST
 function getForcast(coordinates) {
   console.log(coordinates);
 
@@ -8,7 +9,7 @@ function getForcast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-//
+//CURRENT WEATHER
 function displayTemp(response) {
   console.log(response.data);
   console.log(response.data.main.temp);
@@ -121,10 +122,11 @@ function search(city) {
   axios.get(apiUrl).then(displayTemp);
 }
 
-function displayForecast(response) {
-  console.log(response.data.daily);
+// DISPLAY FORECAST (need to loop through this function for each card)
 
-  let forecast = response.data.daily;
+function displayForecast(response) {
+  let forecastArray = response.data.daily;
+  console.log(response.data.daily);
 
   //let forecastElement = document.querySelector("#card-1");
   //forecastElement.innerHTML = forecast;
@@ -135,18 +137,42 @@ function displayForecast(response) {
   //-Min/Max temp
 
   //
-  let weekDay = document.querySelector(".card-day");
+  let weekDay = document.querySelector("#card-day-1");
   weekDay.innerHTML = response.data.daily[0].dt;
   console.log(weekDay);
 
-  //
+  //WEEKDAY ICON
+
   let weekDayIcon = document.querySelector("#weekday-icon-1");
   weekDayIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.daily[0].weather[0].icon}@2x.png`,
     "alt",
-    `${response.data.weather[0].description}`
+    `${response.data.daily[0].weather[0].description}`
   );
+
+  //
+  let weatherIcon = response.data.daily[0].weather[0].main;
+  console.log(weatherIcon);
+
+  if (weatherIcon === "Thunderstorm") {
+    weekDayIcon.setAttribute("src", "/media/JSmedia/11d-alt.png");
+  }
+  if (weatherIcon === "Drizzle") {
+    weekDayIcon.setAttribute("src", "/media/JSmedia/10d-alt.png");
+  }
+  if (weatherIcon === "Rain") {
+    weekDayIcon.setAttribute("src", "/media/JSmedia/09d-alt.png");
+  }
+  if (weatherIcon === "Snow") {
+    weekDayIcon.setAttribute("src", "/media/JSmedia/13d-alt.png");
+  }
+  if (weatherIcon === "Clear") {
+    weekDayIcon.setAttribute("src", "/media/JSmedia/01d-alt.png");
+  }
+  if (weatherIcon === "Clouds") {
+    weekDayIcon.setAttribute("src", "/media/JSmedia/03d-alt.png");
+  }
 
   /* let weekDayIcon = document.querySelector("#weekday-icon-1");
   weekDayIcon.setAttribute =
@@ -158,14 +184,17 @@ function displayForecast(response) {
   console.log(response.data.daily[0].weather[0].description);
 
   //
-  let dailyMinTemp = document.querySelector(".daily-minimum");
+  let dailyMinTemp = document.querySelector("#daily-minimum-1");
   dailyMinTemp.innerHTML = response.data.daily[0].temp.min;
+  console.log(dailyMinTemp);
 
   //
-  let dailyMaxTemp = document.querySelector(".daily-maximum");
+  let dailyMaxTemp = document.querySelector("#daily-maximum-1");
   dailyMaxTemp.innerHTML = response.data.daily[0].temp.max;
+  console.log(dailyMaxTemp);
 }
 
+//SEARCH ENGINE
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -176,6 +205,7 @@ function handleSubmit(event) {
   //searchInputElement.innerHTML
 }
 
+//TEMPERATURE CONVERSION
 function displayFarenheitTemp(event) {
   event.preventDefault();
 
