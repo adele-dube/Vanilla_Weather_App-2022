@@ -235,3 +235,6 @@ let celciusLink = document.querySelector("#temp-celsius");
 celciusLink.addEventListener("click", displayCelciusTemp);
 
 search("Swakopmund");
+
+//---------------------------------------------------------------------
+//Please refer to "/test/jstests.js" for process work
