@@ -1,3 +1,42 @@
+//HTML in JS
+function displayForecast(response) {
+  console.log(response.data.daily);
+
+  let forecastElement = document.querySelector("#card-day-1");
+  forecastElement.innerHTML = "Forecast";
+
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="row justify-content-center" id="upcoming-weather">
+            <span class="card col-2 shadow-sm" id="card-1">
+              <div class="card-day" id="card-day-1">Fri</div>
+              <div>
+                <img
+                  src="media/dead/1530364_rain_storm_shower_weather.png"
+                  alt="Rain Storm"
+                  id="weekday-icon-1"
+                  width="70px"
+                />
+              </div>
+              <div>
+                <span class="daily-minimum" id="daily-minimum-1"> 23°</span>
+                /<span class="daily-maximum" id="daily-maximum-1"> 38° </span>
+              </div>
+            </span>
+            
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //TEMPERATURE USING COORDINATES FOR DAILY FORECAST
 function getForcast(coordinates) {
   console.log(coordinates);
@@ -111,22 +150,22 @@ function displayTemp(response) {
   }*/
 
   getForcast(response.data.coord);
-}
 
-function search(city) {
-  apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  function search(city) {
+    apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-  console.log(apiUrl);
+    console.log(apiUrl);
 
-  axios.get(apiUrl).then(displayTemp);
-}
-
+    axios.get(apiUrl).then(displayTemp);
+    console.log(search);
+  }
+  /*
 // DISPLAY FORECAST (need to loop through this function for each card)
 
 function displayForecast(response) {
   /* let forecastArray = response.data.daily;
-  console.log(response.data.daily);*/
+  console.log(response.data.daily);
 
   //let forecastElement = document.querySelector("#card-1");
   //forecastElement.innerHTML = forecast;
@@ -191,7 +230,7 @@ function displayForecast(response) {
       icon: response.data.daily[0].weather[0].main,
       max: response.data.daily[8].temp.max,
       min: response.data.daily[8].temp.min,
-    },*/
+    },
   ];
   console.log(forecastArray[0].dt);
 
@@ -238,7 +277,7 @@ function displayForecast(response) {
     ("src",
     `http://openweathermap.org/img/wn/${response.data.daily[0].weather[0].icon}@2x.png`,
     "alt",
-    `${response.data.daily[0].weather[0].description}`);*/
+    `${response.data.daily[0].weather[0].description}`);
 
   console.log(response.data.daily[0].weather[0].description);
 
@@ -251,6 +290,7 @@ function displayForecast(response) {
   let dailyMaxTemp = document.querySelector("#daily-maximum-1");
   dailyMaxTemp.innerHTML = response.data.daily[0].temp.max;
   console.log(dailyMaxTemp);
+}*/
 }
 
 //SEARCH ENGINE
@@ -303,7 +343,9 @@ celciusLink.addEventListener("click", displayCelciusTemp);
 
 search("Swakopmund");
 
-//HTML IN JS
+displayForecast();
+
+/*//HTML IN JS
 function displayForecast(response) {
   console.log(response.data.daily);
 
@@ -339,4 +381,99 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+*/
+
+//HTML in JS OPT1
+/*function displayForecast(response) {
+  //console.log(response.data.daily);
+
+  let forecastElement = document.querySelector("#upcoming-weather");
+  // forecastElement.innerHTML = "Forecast";
+
+  let days = ["c1", "c2", "c3"];
+
+  let forecastHTML = `<div class="row" >`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="row justify-content-center" id="upcoming-weather">
+            <span class="card col-2 shadow-sm" id="card-1">
+              <div class="card-day" id="card-day-1">Fri</div>
+              <div>
+                <img
+                  src="media/dead/1530364_rain_storm_shower_weather.png"
+                  alt="Rain Storm"
+                  id="weekday-icon-1"
+                  width="70px"
+                />
+              </div>
+              <div>
+                <span class="daily-minimum" id="daily-minimum-1"> 23°</span>
+                /<span class="daily-maximum" id="daily-maximum-1"> 38° </span>
+              </div>
+            </span>
+            
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}*/
+
+//HTML in JS OPT 2
+function displayForecast() {
+  let forecastElement = document.querySelector("#upcoming-weather");
+
+  //let days = ["Thu", "Fri"];
+
+  let forecastHTML = `<div class="row" id="upcoming-weather">`;
+  //days.forEach(
+    function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      
+            <span class="card col-2 shadow-sm" id="card-1">
+              <div class="card-day" id="card-day-1">Fri</div>
+              <div>
+                <img
+                  src="media/dead/1530364_rain_storm_shower_weather.png"
+                  alt="Rain Storm"
+                  id="weekday-icon-1"
+                  width="70px"
+                />
+              </div>
+              <div>
+                <span class="daily-minimum" id="daily-minimum-1"> 23°</span>
+                /<span class="daily-maximum" id="daily-maximum-1"> 38° </span>
+              </div>
+            </span>
+  `;
+    forecastHTML =
+      forecastHTML +
+      `
+      <div  id="upcoming-weather">
+            <span class="card col-2 shadow-sm" id="card-1">
+              <div class="card-day" id="card-day-1">Fri</div>
+              <div>
+                <img
+                  src="media/dead/1530364_rain_storm_shower_weather.png"
+                  alt="Rain Storm"
+                  id="weekday-icon-1"
+                  width="70px"
+                />
+              </div>
+              <div>
+                <span class="daily-minimum" id="daily-minimum-1"> 23°</span>
+                /<span class="daily-maximum" id="daily-maximum-1"> 38° </span>
+              </div>
+            </span>
+  `;
+  };
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
