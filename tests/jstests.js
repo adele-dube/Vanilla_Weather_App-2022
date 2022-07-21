@@ -125,8 +125,8 @@ function search(city) {
 // DISPLAY FORECAST (need to loop through this function for each card)
 
 function displayForecast(response) {
-  let forecastArray = response.data.daily;
-  console.log(response.data.daily);
+  /* let forecastArray = response.data.daily;
+  console.log(response.data.daily);*/
 
   //let forecastElement = document.querySelector("#card-1");
   //forecastElement.innerHTML = forecast;
@@ -135,6 +135,65 @@ function displayForecast(response) {
   //-Day of week
   //-Weather icon
   //-Min/Max temp
+
+  //Create an array of objects to store daily forecast data???
+  let forecastArray = [
+    {
+      dt: response.data.daily[0].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[0].temp.max,
+      min: response.data.daily[0].temp.min,
+    },
+    /* {
+      dt: response.data.daily[1].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[1].temp.max,
+      min: response.data.daily[1].temp.min,
+    },
+    {
+      dt: response.data.daily[2].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[2].temp.max,
+      min: response.data.daily[2].temp.min,
+    },
+    {
+      dt: response.data.daily[3].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[3].temp.max,
+      min: response.data.daily[3].temp.min,
+    },
+    {
+      dt: response.data.daily[4].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[4].temp.max,
+      min: response.data.daily[4].temp.min,
+    },
+    {
+      dt: response.data.daily[5].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[5].temp.max,
+      min: response.data.daily[5].temp.min,
+    },
+    {
+      dt: response.data.daily[6].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[6].temp.max,
+      min: response.data.daily[6].temp.min,
+    },
+    {
+      dt: response.data.daily[7].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[7].temp.max,
+      min: response.data.daily[7].temp.min,
+    },
+    {
+      dt: response.data.daily[8].dt,
+      icon: response.data.daily[0].weather[0].main,
+      max: response.data.daily[8].temp.max,
+      min: response.data.daily[8].temp.min,
+    },*/
+  ];
+  console.log(forecastArray[0].dt);
 
   //
   let weekDay = document.querySelector("#card-day-1");
@@ -243,3 +302,41 @@ let celciusLink = document.querySelector("#temp-celsius");
 celciusLink.addEventListener("click", displayCelciusTemp);
 
 search("Swakopmund");
+
+//HTML IN JS
+function displayForecast(response) {
+  console.log(response.data.daily);
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="row justify-content-center" id="upcoming-weather">
+            <span class="card col-2 shadow-sm" id="card-1">
+              <div class="card-day" id="card-day-1">Fri</div>
+              <div>
+                <img
+                  src="media/dead/1530364_rain_storm_shower_weather.png"
+                  alt="Rain Storm"
+                  id="weekday-icon-1"
+                  width="70px"
+                />
+              </div>
+              <div>
+                <span class="daily-minimum" id="daily-minimum-1"> 23°</span>
+                /<span class="daily-maximum" id="daily-maximum-1"> 38° </span>
+              </div>
+            </span>
+            
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
