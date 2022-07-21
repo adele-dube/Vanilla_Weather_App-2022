@@ -94,7 +94,7 @@ function displayTemp(response) {
     `${response.data.weather[0].description}`
   );
 
-  /*//Customized Weather Icons Using API Data
+  //Customized Weather Icons Using API Data
   let weatherIcon = response.data.weather[0].main;
   console.log(weatherIcon);
 
@@ -115,7 +115,7 @@ function displayTemp(response) {
   }
   if (weatherIcon === "Clouds") {
     iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
-  }*/
+  }
 
   getForcast(response.data.coord);
 }
