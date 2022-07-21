@@ -991,3 +991,70 @@ search("Swakopmund");
     iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
   }
 
+
+  //CURRENT CITY BUTTON TESTS
+  //function getCurrentLocation (event) {
+
+//}
+
+/*------
+function showPosition(position) {
+  console.log(position);
+
+  console.log(position.coords.longitude);
+  console.log(position.coords.latitude);
+
+  let currentLongitude = position.coords.longitude;
+
+  let currentLatitude = position.coords.latitude;
+
+  let longLat = `${currentLongitude} & ${currentLatitude}`;
+  console.log(longLat);
+
+  navigator.geolocation.getCurrentPosition(showPosition);
+
+  apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
+  let apiUrlLongLat = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&units=metric&appid=${apiKey}`;
+
+  function currentTemp(response) {
+    let temp = Math.ceil(response.data.main.temp);
+
+    let currentTemp = document.querySelector("#current-temp");
+    currentTemp.innerHTML = `${temp}`;
+  }
+
+  let currentCityButton = document.querySelector("#add-city");
+
+  currentCityButton.addEventListener("click", showPosition);
+
+  axios.get(apiUrlLongLat).then(currentTemp);
+}
+
+let currentLocation = document.querySelector("current-city-button");
+currentLocation.addEventListener("click", showPosition);*/
+
+//
+/*function searchLocation(position) {
+  console.log(position);
+
+  console.log(position.coords.longitude);
+  console.log(position.coords.latitude);
+
+  let currentLongitude = position.coords.longitude;
+
+  let currentLatitude = position.coords.latitude;
+
+  apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
+  let apiUrlLongLat = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&units=metric&appid=${apiKey}`;
+
+  axios.get(apiUrlLongLat).then(currentTemp);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentCityButton = document.querySelector("#current-city-button");
+currentCityButton.addEventListener("click", getCurrentLocation);*/

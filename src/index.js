@@ -222,6 +222,22 @@ function displayCelciusTemp(event) {
   //alert(tempCelcius);
 }
 
+//CURRENT CITY BUTTON
+function searchLocation(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemp);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector("#current-city-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 //CALLS MADE UPON PAGE LOADING
 let tempCelcius = null;
 
