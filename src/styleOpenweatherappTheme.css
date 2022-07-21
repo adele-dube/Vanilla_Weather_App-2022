@@ -1,0 +1,115 @@
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-card {
+  background-color: rgb(247, 247, 247);
+  /*background-color: rgb(252, 244, 237);*/
+  color: rgba(72, 72, 74, 1);
+  margin: 25px auto;
+  max-height: 800px;
+  max-width: 800px;
+}
+
+#search-form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#search-input {
+  border-color: rgba(72, 72, 74, 0.2);
+  margin: 10px 80px;
+}
+
+#search-button {
+  margin: 10px 90px;
+}
+
+#search-button {
+  background-color: rgb(72, 72, 74);
+  border-color: rgb(72, 72, 74);
+}
+
+#heading-container {
+  margin: 12px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.current-city {
+  color: rgb(236, 110, 76);
+  font-size: 15px;
+  margin: 25px auto 0px auto;
+  text-align: center;
+}
+
+.current-temperature {
+  font-size: 75px;
+}
+
+.units {
+  font-size: 15px;
+}
+
+#temp-celsius {
+  text-decoration: none;
+}
+
+#temp-farenheit {
+  text-decoration: none;
+}
+
+.units .active {
+  color: rgb(72, 72, 74);
+}
+
+.current-date {
+  font-size: 10px;
+  text-align: center;
+}
+
+ul {
+  font-size: 12px;
+  list-style: none;
+  padding-top: 14px;
+  margin-left: 50px;
+  opacity: 70%;
+  text-align: left;
+}
+
+ul:first-letter {
+  text-transform: capitalize;
+}
+
+#upcoming-weather {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#card-1 {
+  border-color: rgba(72, 72, 74, 0.2);
+  border-radius: 20px;
+  height: 160px;
+  margin: 0 1.5px;
+  padding: 15px 12px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#current-city-button {
+  background-color: rgb(72, 72, 74);
+  border-color: rgb(72, 72, 74);
+  display: block;
+  margin: 20px auto;
+}
+
+.footer {
+  font-size: 7px;
+  text-align: center;
+}
+
+#footer-link {
+  color: rgb(236, 110, 76);
+  text-decoration: none;
+}

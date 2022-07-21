@@ -1,3 +1,4 @@
+//API CALL FOR UPCOMING WEATHER FORECAST USING LONG&LAT
 function getForcast(coordinates) {
   console.log(coordinates);
 
@@ -8,6 +9,7 @@ function getForcast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+//UPCOMING WEATHER FORECAST FORMATING DAY OF THE WEEK
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -16,7 +18,7 @@ function formatForecastDay(timestamp) {
   return days[day];
 }
 
-//
+//CURRENT WEATHER, DATE AND TIME
 function displayTemp(response) {
   console.log(response.data);
   console.log(response.data.main.temp);
@@ -86,16 +88,17 @@ function displayTemp(response) {
   tempCelcius = Math.round(response.data.main.temp);
 
   //Weather Icon
-  let iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#icon"); //#weather-icon-1
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`, //maybe change ${} to forecastDay = response.data.daily[0].weather[0].icon
     "alt",
-    `${response.data.weather[0].description}`
+    `${response.data.weather[0].description}` //maybe change ${} to forecastDay = response.data.daily[0].weather[0].main
   );
 
+  /*CUSTOM WEATHER ICON
   //Customized Weather Icons Using API Data
-  let weatherIcon = response.data.weather[0].main;
+  let weatherIcon = response.data.weather[0].main; //response.data.daily[0].weather[0].main
   console.log(weatherIcon);
 
   if (weatherIcon === "Thunderstorm") {
@@ -115,11 +118,12 @@ function displayTemp(response) {
   }
   if (weatherIcon === "Clouds") {
     iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
-  }
+  }*/
 
   getForcast(response.data.coord);
 }
 
+//SEARCH BAR INPUT VALUE TO API
 function search(city) {
   apiKey = "1a915758c5fb84c9ee7377f6039e76a7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -129,16 +133,16 @@ function search(city) {
   axios.get(apiUrl).then(displayTemp);
 }
 
-//HTML in JS OPT 2
+//HTML in JS
 function displayForecast(response) {
   console.log(response.data.daily);
+
   let upcomingForcast = response.data.daily;
 
   let forecastElement = document.querySelector("#upcoming-weather");
 
-  //let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
-
   let forecastHTML = `<div class="row justify-content-center" id="upcoming-weather">`;
+
   upcomingForcast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
@@ -175,10 +179,12 @@ function displayForecast(response) {
   });
 
   forecastHTML = forecastHTML + `</div>`;
+
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+  //console.log(forecastHTML);
 }
 
+//STORES VALUE OF SEARCH BAR INPUT
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -189,6 +195,7 @@ function handleSubmit(event) {
   //searchInputElement.innerHTML
 }
 
+//TEMPERATURE CONVERSION C TO F
 function displayFarenheitTemp(event) {
   event.preventDefault();
 
@@ -202,6 +209,7 @@ function displayFarenheitTemp(event) {
   //alert(tempFarenheit);
 }
 
+//TEMPERATURE CONVERSION F TO C
 function displayCelciusTemp(event) {
   event.preventDefault();
 
@@ -214,6 +222,7 @@ function displayCelciusTemp(event) {
   //alert(tempCelcius);
 }
 
+//CALLS MADE UPON PAGE LOADING
 let tempCelcius = null;
 
 let form = document.querySelector("#search-form");

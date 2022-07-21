@@ -915,3 +915,79 @@ celciusLink.addEventListener("click", displayCelciusTemp);
 
 search("Swakopmund");
 
+
+//CUSTOMIZED DAILY FORECAST ICONS
+
+//START OF CUSTOM WEATHER ICON
+  //Weather Icon
+  let iconElement = document.querySelector("#weekday-icon-1");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png`,
+    "alt",
+    `${forecastDay.weather[0].description}`
+  );
+
+  //Customized Weather Icons Using API Data
+  let weatherIcon = forecastDay.weather[0].main;
+  console.log(weatherIcon);
+
+  if (weatherIcon === "Thunderstorm") {
+    iconElement.setAttribute("src", "/media/JSmedia/11d-alt.png");
+  }
+  if (weatherIcon === "Drizzle") {
+    iconElement.setAttribute("src", "/media/JSmedia/10d-alt.png");
+  }
+  if (weatherIcon === "Rain") {
+    iconElement.setAttribute("src", "/media/JSmedia/09d-alt.png");
+  }
+  if (weatherIcon === "Snow") {
+    iconElement.setAttribute("src", "/media/JSmedia/13d-alt.png");
+  }
+  if (weatherIcon === "Clear") {
+    iconElement.setAttribute("src", "/media/JSmedia/01d-alt.png");
+  }
+  if (weatherIcon === "Clouds") {
+    iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
+  }
+  //END OF CUSTOM WEATHER ICON
+
+  //21/07/22 USE THIS FOR CUSTOM DAILY WEATHER ICON
+  //Weather Icon
+  let iconElement = document.querySelector("#weekday-icon-1"); 
+
+  let iconSrc = response.data.daily[0].weather[0].icon;
+  let iconDescription = response.data.daily[0].weather[0].main
+
+
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconSrc}@2x.png`, 
+    "alt",
+    `${iconDescription}` //maybe change ${} to forecastDay = 
+  );
+
+  //Customized Weather Icons Using API Data
+  let weatherIcon = response.data.daily[0].weather[0].main; //
+  console.log(weatherIcon);
+
+  if (weatherIcon === "Thunderstorm") {
+    iconElement.setAttribute("src", "/media/JSmedia/11d-alt.png");
+  }
+  if (weatherIcon === "Drizzle") {
+    iconElement.setAttribute("src", "/media/JSmedia/10d-alt.png");
+  }
+  if (weatherIcon === "Rain") {
+    iconElement.setAttribute("src", "/media/JSmedia/09d-alt.png");
+  }
+  if (weatherIcon === "Snow") {
+    iconElement.setAttribute("src", "/media/JSmedia/13d-alt.png");
+  }
+  if (weatherIcon === "Clear") {
+    iconElement.setAttribute("src", "/media/JSmedia/01d-alt.png");
+  }
+  if (weatherIcon === "Clouds") {
+    iconElement.setAttribute("src", "/media/JSmedia/03d-alt.png");
+  }
+
