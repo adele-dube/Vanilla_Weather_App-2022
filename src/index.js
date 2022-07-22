@@ -237,12 +237,14 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-city-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+currentLocationButton.addEventListener("click", displayCelciusTemp);
 
 //CALLS MADE UPON PAGE LOADING
 let tempCelcius = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", displayCelciusTemp);
 
 let farenheitLink = document.querySelector("#temp-farenheit");
 farenheitLink.addEventListener("click", displayFarenheitTemp);
